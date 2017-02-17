@@ -80,9 +80,15 @@ class GoPiggy(pigo.Pigo):
         print ('Squaredance')
         self.encF(10)
         self.encR(36)
-        self.encB(15)
-        self.encR(36)
+        self.encR(90)
         self.encF(10)
+        self.encR(360)
+        self.encR(90)
+        self.encF(10)
+        self.encR(360)
+        self.encR(90)
+        self.encF(10)
+
 
     def dosey_doe(self):
         print ('Dosey Doe')
