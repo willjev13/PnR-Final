@@ -65,11 +65,11 @@ class GoPiggy(pigo.Pigo):
         ##### WRITE YOUR FIRST PROJECT HERE
         self.search_and_destroy()
         self.squaredance()
-        #self.sprinkler()
+        self.dosey_doe()
         #self.back_it_up()
 
     def search_and_destroy(self):
-        print('shimmy')
+        print('Search and Destroy')
         for x in range(3):
             self.servo(30)
             self.encR(3)
@@ -77,13 +77,20 @@ class GoPiggy(pigo.Pigo):
             self.encL(3)
 
     def squaredance(self):
-        print ('chacha')
-
+        print ('Squaredance')
         self.encF(10)
         self.encR(36)
         self.encB(15)
         self.encR(36)
         self.encF(10)
+
+    def dosey_doe(self):
+        print ('Dosey Doe')
+        self.encR(72)
+        self.encL(72)
+        self.encF(5)
+        self.encB(5)
+
 
 
 
