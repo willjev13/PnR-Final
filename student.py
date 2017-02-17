@@ -66,7 +66,7 @@ class GoPiggy(pigo.Pigo):
         self.search_and_destroy()
         self.squaredance()
         self.dosey_doe()
-        #self.back_it_up()
+        self.douggie()
 
     def search_and_destroy(self):
         print('Search and Destroy')
@@ -104,6 +104,15 @@ class GoPiggy(pigo.Pigo):
         self.encB(5)
         self.servo(30)
         self.servo(150)
+
+    def douggie(self):
+        print ('Douggie')
+        self.encB(10)
+        self.encR(3)
+        self.servo(80)
+        self.encR(6)
+        self.servo(80)
+        self.encR(3)
 
 
 
