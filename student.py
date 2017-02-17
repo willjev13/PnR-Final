@@ -99,7 +99,7 @@ class GoPiggy(pigo.Pigo):
         print ('Dosey Doe')
         self.encR(72)
         time.sleep(.25)
-        self.encL(72)
+        self.encL(70)
         self.encF(5)
         self.encB(5)
         self.servo(30)
