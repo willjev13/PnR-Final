@@ -78,19 +78,19 @@ class GoPiggy(pigo.Pigo):
 
     def squaredance(self):
         print ('Squaredance')
-        self.encF(10)
+        self.encF(30)
         self.encR(36)
         time.sleep(.25)
         self.encR(9)
-        self.encF(10)
+        self.encF(30)
         self.encR(36)
         time.sleep(.25)
         self.encR(9)
-        self.encF(10)
+        self.encF(30)
         self.encR(36)
         time.sleep(.25)
         self.encR(9)
-        self.encF(10)
+        self.encF(30)
 
 
     def dosey_doe(self):
