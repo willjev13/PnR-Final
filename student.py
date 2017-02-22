@@ -103,11 +103,21 @@ class GoPiggy(pigo.Pigo):
         self.encR(6)
         self.encF(30)
 
+    def douggie(self):
+        print('Douggie')
+        self.encB(10)
+        self.encR(3)
+        self.servo(80)
+        time.sleep(.1)
+        self.encL(6)
+        self.servo(80)
+        time.sleep(.1)
+        self.encR(3)
 
     def dosey_doe(self):
         print ('Dosey Doe')
         self.encR(72)
-        time.sleep(.25)
+        time.sleep(.05)
         self.encL(70)
         self.encF(5)
         self.encB(5)
