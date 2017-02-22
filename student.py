@@ -76,6 +76,7 @@ class GoPiggy(pigo.Pigo):
         ##### WRITE YOUR FIRST PROJECT HERE
         self.search_and_destroy()
         self.squaredance()
+        self.douggie()
         self.dosey_doe()
         self.douggie()
 
