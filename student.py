@@ -102,6 +102,7 @@ class GoPiggy(pigo.Pigo):
         time.sleep(.25)
         self.encR(6)
         self.encF(30)
+        time.sleep(.2)
 
     def douggie(self):
         print('Douggie')
