@@ -65,8 +65,8 @@ class GoPiggy(pigo.Pigo):
             self.servo(x)
             if self.dist() <30:
                 print("Houston, we have a problem!")
-                break
-
+                return
+        self.dance()
 
     #YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
