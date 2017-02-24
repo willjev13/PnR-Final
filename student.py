@@ -76,9 +76,9 @@ class GoPiggy(pigo.Pigo):
     def restore_heading (self):
         print("Now I'll turn back to starting position")
         x = self.turn_track
-        if self.turn_track > 0
+        if self.turn_track > 0:
             encL(abs(x))
-        elif self.turn_track < 0
+        elif self.turn_track < 0:
             encR(abs(x))
 
 
