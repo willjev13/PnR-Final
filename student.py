@@ -188,11 +188,10 @@ class GoPiggy(pigo.Pigo):
 
     def encR(self, enc):
         pigo.Pigo.encL(self, enc)
-        super().encR(enc)
         self.turn_track += enc
 
-     def enc(self, enc):
-         pigo.Pigo.encL(self, enc)
+    def enc(self, enc):
+        pigo.Pigo.encL(self, enc)
         self.turn_track -= enc
 
 
