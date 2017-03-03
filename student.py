@@ -95,9 +95,9 @@ class GoPiggy(pigo.Pigo):
 
     def total_obstacles(self):
         for x in range(4):
-        counter = 0
-        counter += self.count_obstacles
-        self.encR(7)
+            counter = 0
+            counter += self.count_obstacles()
+            self.encR(7)
 
 
 
