@@ -52,7 +52,7 @@ class GoPiggy(pigo.Pigo):
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit),
                 "o": ("Count obstacles", self.count_obstacles),
-                "a": ("Total obstacles", self.count_obstacles)
+                "a": ("Total obstacles", self.total_obstacles)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -94,10 +94,11 @@ class GoPiggy(pigo.Pigo):
         return counter
 
     def total_obstacles(self):
+        counter = 0
         for x in range(4):
-            counter = 0
             counter += self.count_obstacles()
             self.encR(7)
+        print("Total number of obstacles found on this scan" + str(counter))
 
 
 
