@@ -81,14 +81,14 @@ class GoPiggy(pigo.Pigo):
                     found_something = True
                     print("start of a new obstacle")
                     # if my data show safe spaces...
-                if x and x > self.STOP_DIST:
-                    # if my tracker has been triggered
-                    if found_something:
-                        print("end of obstacle")
-                        # reset tracker
-                        found_something= False
-                        # increase count of obstacles
-                        counter += 1
+            if x and x > self.STOP_DIST:
+                # if my tracker has been triggered
+                if found_something:
+                    print("end of obstacle")
+                    # reset tracker
+                    found_something= False
+                    # increase count of obstacles
+                    counter += 1
         print("Total number of obstacles in this scan: " + str(counter))
         return counter
 
