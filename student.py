@@ -50,7 +50,7 @@ class GoPiggy(pigo.Pigo):
                 "c": ("Calibrate", self.calibrate),
                 "t": ("Turn test", self.turn_test),
                 "s": ("Check status", self.status),
-                "q": ("Quit", quit)
+                "q": ("Quit", quit),
                 "o": ("Count obstacles", self.count_obstacles)
                 }
         # loop and print the menu...
