@@ -51,6 +51,7 @@ class GoPiggy(pigo.Pigo):
                 "t": ("Turn test", self.turn_test),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit),
+                "n": ("Navigate", self.nav),
                 "o": ("Count obstacles", self.count_obstacles),
                 "a": ("Total obstacles", self.total_obstacles)
                 }
@@ -93,14 +94,33 @@ class GoPiggy(pigo.Pigo):
         print("Total number of obstacles in this scan: " + str(counter))
         return counter
 
+    def nav(self):
+        print("-----------! NAVIGATION ACTIVATED !------------\n")
+        print("[ Press CTRL + C to stop me, then run stop.py ]\n")
+        print("-----------! NAVIGATION ACTIVATED !------------\n")
+        # this is the loop part of the "main logic loop"
+        while True:
+            if self.is_clear():
+                self.cruise()
+            answer = self.choose_path()
+            if answer == "left":
+                self.encL(6)
+            elif answer == "right":
+                self.encR(6)
+
+    def cruise(self):
+        self.fwd()  # I added this to pigo
+        while self.is_clear():
+            time.sleep(.1)
+        self.stop()
+        self.encB(3)
+
     def total_obstacles(self):
         counter = 0
         for x in range(4):
             counter += self.count_obstacles()
             self.encR(6)
         print("Total number of obstacles found on this scan: " + str(counter))
-
-
 
 
     def turn_test(self):
