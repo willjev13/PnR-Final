@@ -51,7 +51,7 @@ class GoPiggy(pigo.Pigo):
                 "t": ("Turn test", self.turn_test),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit),
-                "f": ("Navigate", self.nav),
+                "f": ("Final", self.final),
                 "o": ("Count obstacles", self.count_obstacles),
                 "a": ("Total obstacles", self.total_obstacles)
                 }
@@ -94,7 +94,7 @@ class GoPiggy(pigo.Pigo):
         print("Total number of obstacles in this scan: " + str(counter))
         return counter
 
-    def nav(self):
+    def final(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
