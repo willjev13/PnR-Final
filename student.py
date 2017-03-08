@@ -51,7 +51,7 @@ class GoPiggy(pigo.Pigo):
                 "t": ("Turn test", self.turn_test),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit),
-                "n": ("Navigate", self.nav),
+                "f": ("Navigate", self.nav),
                 "o": ("Count obstacles", self.count_obstacles),
                 "a": ("Total obstacles", self.total_obstacles)
                 }
