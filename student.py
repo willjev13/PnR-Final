@@ -105,13 +105,12 @@ class GoPiggy(pigo.Pigo):
                     self.cruise()
                 else:
                     self.maneuver()
-
-                # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
+ # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
             answer = self.choose_path()
             if answer == "left":
-                self.encL(6)
+                self.encL(4)
             elif answer == "right":
-                self.encR(6)
+                self.encR(4)
 
     def maneuver(self):
         if self.turn_track > 0:
@@ -183,10 +182,10 @@ class GoPiggy(pigo.Pigo):
         for y in range(3):
             for x in range(self.MIDPOINT - 60,self.MIDPOINT + 60,2):
                 self.servo(x)
-                if self.dist() <30:
+                if self.dist() <15:
                     print("Houston, we have a problem!")
                     return
-            self.encR(7)
+            self.encR(4)
         self.dance()
 
     #YOU DECIDE: How does your GoPiggy dance?
