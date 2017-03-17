@@ -114,6 +114,19 @@ class GoPiggy(pigo.Pigo):
                 self.encR(6)
 
     def maneuver(self):
+        if self.turn_track > 0:
+            while self.is_clear():
+                self.encF(5)
+                self.servo(self.MIDPOINT + 60)
+                if self.dist() > self.STOP_DIST + 20:
+                    self.restore_heading()
+        elif self.turn_track < 0:
+            while self.is_clear():
+                self.encF(5)
+                self.servo(self.MIDPOINT - 60)
+                if self.dist() > self.STOP_DIST + 20:
+                    self.restore_heading()
+
         #if encR, servo sweep from center to left limit
         #if encL, servo sweep from center to right limit
         #if total_obstacles are greater than 0, encF(5) and servo sweep
