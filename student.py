@@ -101,12 +101,23 @@ class GoPiggy(pigo.Pigo):
         # this is the loop part of the "main logic loop"
         while True:
             if self.is_clear():
-                self.cruise()
+                if self.turn_track == 0:
+                    self.cruise()
+                else:
+                    self.maneuver()
+
+                # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
             answer = self.choose_path()
             if answer == "left":
                 self.encL(6)
             elif answer == "right":
                 self.encR(6)
+
+    def maneuver(self):
+        #if encR, servo sweep from center to left limit
+        #if encL, servo sweep from center to right limit
+        #if total_obstacles are greater than 0, encF(5) and servo sweep
+        #else reset turn track to 0, cruise
 
     def cruise(self):
         self.fwd()  # I added this to pigo
