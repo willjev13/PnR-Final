@@ -114,6 +114,7 @@ class GoPiggy(pigo.Pigo):
                 self.encR(4)
         #want to add to maneuver way to go towards the greatest possible distance reading, not average
         #scan and if distance >150 is found, immediately go that way
+        #worked with mr. A on sniff opening
     def maneuver(self):
         print("My turn_track is: + self.turn_track.")
         if self.turn_track > 0:
