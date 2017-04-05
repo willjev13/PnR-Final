@@ -105,14 +105,16 @@ class GoPiggy(pigo.Pigo):
                     self.cruise()
                 else:
                     self.maneuver()
- # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
+            # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
             answer = self.choose_path()
+            print("My choose_path method told me to turn: " + answer)
             if answer == "left":
                 self.encL(4)
             elif answer == "right":
                 self.encR(4)
 
     def maneuver(self):
+        print("My turn_track is: + self.turn_track.")
         if self.turn_track > 0:
             while self.is_clear():
                 self.encF(5)
@@ -126,10 +128,10 @@ class GoPiggy(pigo.Pigo):
                 if self.dist() > self.STOP_DIST + 20:
                     self.restore_heading()
 
-        #if encR, servo sweep from center to left limit
-        #if encL, servo sweep from center to right limit
-        #if total_obstacles are greater than 0, encF(5) and servo sweep
-        #else reset turn track to 0, cruise
+    #if encR, servo sweep from center to left limit
+    #if encL, servo sweep from center to right limit
+    #if total_obstacles are greater than 0, encF(5) and servo sweep
+    #else reset turn track to 0, cruise
 
     def cruise(self):
         self.fwd()  # I added this to pigo
