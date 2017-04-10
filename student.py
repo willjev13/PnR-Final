@@ -130,6 +130,25 @@ class GoPiggy(pigo.Pigo):
                 if self.dist() > self.STOP_DIST + 20:
                     self.restore_heading()
 
+        # DECIDE WHICH WAY TO TURN
+    def sniff_opening(self):
+            print('Doing my full scan')
+            self.wide_scan()
+            print('Finding the largest result')
+            largest = 0
+            for x in range(170):
+                if scan[x] > largest:
+                    largest = x
+                    print("My current largest value is: " + scan[x] + " at degree" + str(x))
+            # TODO: Start turning toward the best angle once the above loop finishes
+            self.servo(self.MIDPOINT)
+            if largest > self.MIDPOINT:
+                while abs(self.dist() - largest) > 10:
+                    self.encR(3)
+            elif largest < self.MIDPOINT:
+                while abs(self.dist() - largest) > 10:
+                    self.encL(3)
+
     #if encR, servo sweep from center to left limit
     #if encL, servo sweep from center to right limit
     #if total_obstacles are greater than 0, encF(5) and servo sweep
