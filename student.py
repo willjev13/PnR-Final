@@ -104,7 +104,7 @@ class GoPiggy(pigo.Pigo):
                 if self.turn_track == 0:
                     self.cruise()
                 else:
-                    self.maneuver()
+                    self.sniff_opening()
             # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
             answer = self.choose_path()
             print("My choose_path method told me to turn: " + answer)
