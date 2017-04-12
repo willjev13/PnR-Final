@@ -140,7 +140,7 @@ class GoPiggy(pigo.Pigo):
             for x in range(170):
                 if self.scan[x] > largest:
                     largest = x
-                    print("My current largest value is: " + scan[x] + " at degree" + str(x))
+                    print("My current largest value is: " + self.scan[x] + " at degree" + str(x))
             # TODO: Start turning toward the best angle once the above loop finishes
             self.servo(self.MIDPOINT)
             if largest > self.MIDPOINT:
