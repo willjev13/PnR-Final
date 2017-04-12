@@ -18,7 +18,7 @@ class GoPiggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 90
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.STOP_DIST = 50
+        self.STOP_DIST = 35
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 80
         # YOU DECIDE: What left motor power helps straighten your fwd()?
@@ -54,7 +54,7 @@ class GoPiggy(pigo.Pigo):
                 "f": ("Final", self.final),
                 "o": ("Count obstacles", self.count_obstacles),
                 "a": ("Total obstacles", self.total_obstacles),
-                "z": ("Sniff opening", self.sniff_opening)
+                "z": ("Sniff opening", self.sniff_opening),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -102,33 +102,32 @@ class GoPiggy(pigo.Pigo):
         # this is the loop part of the "main logic loop"
         while True:
             if self.is_clear():
-                if self.turn_track == 0:
-                    self.cruise()
-                else:
-                    self.sniff_opening()
+                self.cruise()
+            answer = self.choose_path
+            if answer == "left"
+                self.encL(4)
+            elif answer == "right"
+                self.encR(4)
             # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
             answer = self.choose_path()
             print("My choose_path method told me to turn: " + answer)
-            if answer == "left":
-                self.encL(4)
-            elif answer == "right":
-                self.encR(4)
+
         #want to add to maneuver way to go towards the greatest possible distance reading, not average
         #scan and if distance >150 is found, immediately go that way
         #worked with mr. A on sniff opening
     def maneuver(self):
         print("My turn_track is: + self.turn_track.")
         if self.turn_track > 0:
-            while self.is_clear():
+            #while self.is_clear():
                 self.encF(5)
                 self.servo(self.MIDPOINT + 60)
                 if self.dist() > self.STOP_DIST + 20:
                     self.restore_heading()
         elif self.turn_track < 0:
-            while self.is_clear():
+            #while self.is_clear():
                 self.encF(5)
                 self.servo(self.MIDPOINT - 60)
-                if self.dist() > self.STOP_DIST + 20:
+                #if self.dist() > self.STOP_DIST + 20:
                     self.restore_heading()
 
         # DECIDE WHICH WAY TO TURN
