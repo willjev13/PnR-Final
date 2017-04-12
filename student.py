@@ -54,7 +54,7 @@ class GoPiggy(pigo.Pigo):
                 "f": ("Final", self.final),
                 "o": ("Count obstacles", self.count_obstacles),
                 "a": ("Total obstacles", self.total_obstacles),
-                "z": ("Sniff opening", self.sniff_opening())
+                "z": ("Sniff opening", self.sniff_opening)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
