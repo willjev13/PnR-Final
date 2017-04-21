@@ -16,7 +16,7 @@ class GoPiggy(pigo.Pigo):
     def __init__(self):
         print("Your piggy has be instantiated!")
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
-        self.MIDPOINT = 90
+        self.MIDPOINT = 80
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.STOP_DIST = 35
         # YOU DECIDE: What left motor power helps straighten your fwd()?
@@ -103,20 +103,21 @@ class GoPiggy(pigo.Pigo):
         while True:
             if self.is_clear():
                 self.cruise()
-            answer = self.choose_path
-            if answer == "left":
-                self.encL(4)
-            elif answer == "right":
-                self.encR(4)
-            # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
             answer = self.choose_path()
             print("My choose_path method told me to turn: " + answer)
+            if answer == "left":
+                self.encL(7)
+                self.maneuver()
+            elif answer == "right":
+                self.encR(7)
+                self.maneuver()
+            # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
 
         #want to add to maneuver way to go towards the greatest possible distance reading, not average
         #scan and if distance >150 is found, immediately go that way
         #worked with mr. A on sniff opening
     def maneuver(self):
-        print("My turn_track is: + self.turn_track.")
+        print("My turn_track is: " + str(self.turn_track))
         if self.turn_track > 0:
             while self.is_clear():
                 self.encF(5)
