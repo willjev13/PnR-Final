@@ -121,14 +121,16 @@ class GoPiggy(pigo.Pigo):
         if self.turn_track > 0:
             while self.is_clear():
                 self.encF(8)
-            self.servo(self.MIDPOINT + 60)
+            self.servo(self.MIDPOINT + 40)
             if self.dist() > self.STOP_DIST + 20:
+                time.sleep(.1)
                 self.restore_heading()
                 return
             self.servo(self.MIDPOINT)
 
 
         # DECIDE WHICH WAY TO TURN
+        #discussed a way to identify and slowly turn to the largest gap with Mr. A, spent 15 minutes at the end of class developing code below
     def sniff_opening(self):
             print('Doing my full scan')
             self.wide_scan()
