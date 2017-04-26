@@ -120,7 +120,7 @@ class GoPiggy(pigo.Pigo):
         print("My turn_track is: " + str(self.turn_track))
         if self.turn_track > 0:
             while self.is_clear():
-                self.encF(4)
+                self.encF(8)
             self.servo(self.MIDPOINT + 60)
             if self.dist() > self.STOP_DIST + 20:
                 self.restore_heading()
