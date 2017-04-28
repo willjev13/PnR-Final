@@ -106,9 +106,11 @@ class GoPiggy(pigo.Pigo):
             answer = self.choose_path()
             print("My choose_path method told me to turn: " + answer)
             if answer == "left":
+                self.encB(1)
                 self.encL(4)
                 self.maneuver()
             elif answer == "right":
+                self.encB(1)
                 self.encR(4)
                 self.maneuver()
             # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
@@ -121,12 +123,13 @@ class GoPiggy(pigo.Pigo):
         if self.turn_track > 0:
             while self.is_clear():
                 self.encF(8)
-            self.servo(self.MIDPOINT + 40)
+            self.servo(self.MIDPOINT + 25)
             if self.dist() > self.STOP_DIST + 20:
                 time.sleep(.1)
                 self.restore_heading()
                 return
             self.servo(self.MIDPOINT)
+
 
 
         # DECIDE WHICH WAY TO TURN
