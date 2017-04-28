@@ -20,9 +20,9 @@ class GoPiggy(pigo.Pigo):
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.STOP_DIST = 35
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 60
+        self.LEFT_SPEED = 50
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 60
+        self.RIGHT_SPEED = 50
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -106,11 +106,9 @@ class GoPiggy(pigo.Pigo):
             answer = self.choose_path()
             print("My choose_path method told me to turn: " + answer)
             if answer == "left":
-                self.encB(1)
                 self.encL(4)
                 self.maneuver()
             elif answer == "right":
-                self.encB(1)
                 self.encR(4)
                 self.maneuver()
             # wish to stop after 10 and rescan, work to the edge of obstacle and then cruise
