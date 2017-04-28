@@ -159,7 +159,7 @@ class Pigo(object):
 
     def is_clear(self):
         print("Running the is_clear method.")
-        for x in range((self.MIDPOINT - 40), (self.MIDPOINT + 40), 10):
+        for x in range((self.MIDPOINT - 30), (self.MIDPOINT + 30), 10):
             servo(x)
             time.sleep(.1)
             scan1 = us_dist(15)
@@ -210,7 +210,7 @@ class Pigo(object):
             stop()
         servo(self.MIDPOINT)
         time.sleep(0.05)
-        disable_servo()
+
 
     def calibrate(self):
         print("Calibrating...")
